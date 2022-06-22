@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" media="print" href="styles/print.css">
+    <link rel="icon" href="images/icon.png" type="image/png">
+    <title>UM - Чек-лист</title>
+</head>
+<body>
+    <script src="js/jquery-min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        // progress-bar
+        $(document).ready(function() {
+            // get box count
+        var count = 0;
+        var checked = 0;
+        function countBoxes() { 
+            count = $("input[type='checkbox']").length;
+        }
+
+        countBoxes();
+        $(":checkbox").click(countBoxes);
+        
+        // count checks
+
+        function countChecked() {
+            checked = $("input:checked").length;
+            
+            var percentage = parseInt(((checked / count) * 100),10);
+            $(".progressbar-bar").progressbar({
+                    value: percentage
+                });
+            if (percentage < 100) {
+                $(".progressbar-label").text("Ваша свадьба готова на " + percentage + "%");
+                $(".progressbar-label").css("color", "black");
+            } else if (percentage == 100) {
+                $(".progressbar-label").text("Ваша свадьба готова на " + percentage + "%");
+                $(".progressbar-label").css("color", "darkgreen");
+            }
+        }
+        countChecked();
+        $(":checkbox").click(countChecked);
+        });
+    </script>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html" title="На главную"><img src="images/header-logo.png" alt="logo"></a>
+        </div>
+        <div class="contacts">
+            <div class="tel"><a href="tel:+375296184644" title="Номер телефона">+375 (29) 618-46-44</a></div>
+            <div class="icon-phone"><a href="tel:+375296184644" title="Позвонить"></a></div>
+            <div class="icon-instagram"><a href="https://www.instagram.com/ulyana_mihalchenko/" target="_blank" title="Ссылка на instagram"></a></div>
+            <div class="icon-vk"><a href="https://vk.com/gazimzanova" target="_blank" title="Ссылка на vkontakte"></a></div>
+            <div class="icon-facebook"><a href="https://www.facebook.com/profile.php?id=100005097229272" target="_blank" title="Ссылка на facebook"></a></div>            
+        </div>
+        <div class="nav">
+            <ul class="nav__menu">
+                <li class="nav__menu__item"><a href="about.html" title="Переход на страницу">Обо мне</a></li>
+                <li class="nav__menu__item"><a href="services.html" title="Переход на страницу">Услуги</a></li>
+                <li class="nav__menu__item"><a href="check-list.html" title="Переход на страницу">Чек-лист</a></li>
+                <li class="nav__menu__item"><a href="contacts.html" title="Переход на страницу">Контакты</a></li>
+                <li class="icon-menu"><a href="#" title="Высплывающее меню"></a>
+                    <ul class="nav__menu-hover">
+                        <li class="nav__menu__item-hover"><a href="about.html" title="Переход на страницу">Обо мне</a></li>
+                        <li class="nav__menu__item-hover"><a href="services.html" title="Переход на страницу">Услуги</a></li>
+                        <li class="nav__menu__item-hover"><a href="check-list.html" title="Переход на страницу">Чек-лист</a></li>
+                        <li class="nav__menu__item-hover"><a href="contacts.html" title="Переход на страницу">Контакты</a></li>
+                </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="check-list__block">
+        <div class="add__page__header">
+            <h1>Чек-лист</h1>
+            <p><a href="index.html" title="На главную">Главная</a> &rsaquo; <span class="current__page">Чек-лист</span></p>
+            <div class="contacts-alternative">
+                <div class="tel"><a href="tel:+375296184644" title="Номер телефона">+375 (29) 618-46-44</a></div>
+                <div class="icon-phone"><a href="tel:+375296184644" title="Позвонить"></a></div>
+                <div class="icon-instagram"><a href="https://www.instagram.com/ulyana_mihalchenko/" target="_blank" title="Ссылка на instagram"></a></div>
+                <div class="icon-vk"><a href="https://vk.com/gazimzanova" target="_blank" title="Ссылка на vkontakte"></a></div>
+                <div class="icon-facebook"><a href="https://www.facebook.com/profile.php?id=100005097229272" target="_blank" title="Ссылка на facebook"></a></div>            
+            </div>
+        </div>
+        <div class="checkbox-bg">
+            <form>
+                <div class="checkbox">
+                    <div class="checkbox__header">
+                        <h3>Перечень необходимых подготовительных мероприятий</h3>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_01" name="check_box_01">
+                        <label for="check_box_01">Определить бюджет</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_02" name="check_box_02">
+                        <label for="check_box_02">Определить стилистику и концепцию мероприятия</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_03" name="check_box_03">
+                        <label for="check_box_03">Определить общий список гостей</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_04" name="check_box_04">
+                        <label for="check_box_04">Составить смету</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_05" name="check_box_05">
+                        <label for="check_box_05">Подобрать площадку для банкета, выездной регистрации</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_06" name="check_box_06">
+                        <label for="check_box_06">Определить формат банкета - фуршет / обслуживание официантами</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_07" name="check_box_07">
+                        <label for="check_box_07">Проработать банкетное меню с подрядной организацией</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_08" name="check_box_08">
+                        <label for="check_box_08">Утвердить меню и смету свадебного банкета</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_09" name="check_box_09">
+                        <label for="check_box_09">Подобрать свадебный торт</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_10" name="check_box_10">
+                        <label for="check_box_10">Записаться в свадебный салон на примерку платья</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_11" name="check_box_11">
+                        <label for="check_box_11">Продумать и подготовить необходимые аксессуары для невесты: фата, вуаль, диадема, украшения и прочее</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_12" name="check_box_12">
+                        <label for="check_box_12">Выбрать стилиста/визажиста/парикмахера, утвердить и согласовать время для создания образа</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_13" name="check_box_13">
+                        <label for="check_box_13">Образ жениха: определить стиль, прическу, костюм</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_14" name="check_box_14">
+                        <label for="check_box_14">Купить кольца</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_15" name="check_box_15">
+                        <label for="check_box_15">Выбрать ведущего, заключить договор</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_16" name="check_box_16">
+                        <label for="check_box_16">Выбрать фотографа/видеооператора, заключить договор</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_17" name="check_box_17">
+                        <label for="check_box_17">Подобрать локации для съемки совместной прогулки</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_18" name="check_box_18">
+                        <label for="check_box_18">Забронировать (при необходимости) номер для утренних сборов невесты</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_19" name="check_box_19">
+                        <label for="check_box_19">Подобрать команду свадебных декораторов и флористов, заключить договор</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_20" name="check_box_20">
+                        <label for="check_box_20">Подобрать букет и бутоньерку</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_21" name="check_box_21">
+                        <label for="check_box_21">Заказать изготовление полиграфической продукции (пригласительные, план рассадки)</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_22" name="check_box_22">
+                        <label for="check_box_22">Выбрать хореографа для постановки свадебного танца</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_23" name="check_box_23">
+                        <label for="check_box_23">Подобрать участников выездной церемонии: регистратор, диджей, музыканты</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_24" name="check_box_24">
+                        <label for="check_box_24">Подобрать аксессуары для выездной церемонии: стулья для гостей, шкаткулка для колец, шкатулка для церемонии дарения</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_25" name="check_box_25">
+                        <label for="check_box_25">Выбрать музыкальное сопровождение для важных этапов церемонии (выход жениха, невесты, первый танец, вечерняя церемония)</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_26" name="check_box_26">
+                        <label for="check_box_26">Подобрать артистов на мероприятие</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_27" name="check_box_27">
+                        <label for="check_box_27">Согласовать тайминг выступления с артистами, время транспортировки реквизита и приезда гостей на площадку</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_28" name="check_box_28">
+                        <label for="check_box_28">Предусмотреть аниматора, если на торжестве ожидается более 3-х детей</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_29" name="check_box_29">
+                        <label for="check_box_29">Выбрать подрядную организацию по звуковому и световому оснащению, заключить договор</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_30" name="check_box_30">
+                        <label for="check_box_30">Составить для диджея плейлист со списком желаемых музыкальных композиций, фоновой музыкой</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_31" name="check_box_31">
+                        <label for="check_box_31">Предоставить ведущему фото и видеопрезентации пары, список с кратким описанием и именами гостей</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_32" name="check_box_32">
+                        <label for="check_box_32">Выбрать програму на завершение торжества: фаер-шоу, фейерверк, заключить договор</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_33" name="check_box_33">
+                        <label for="check_box_33">Обсудить программу и предварительный тайминг с ведущим</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_34" name="check_box_34">
+                        <label for="check_box_34">Подготовить аксессуары для проведения традиций (свечи для семейного очага, вуаль для снятия фаты, букет-дублер, подвязка)</label><br>
+                    </div>
+                    <div class="checkbox__item print-next-page">
+                        <input type="checkbox" id="check_box_35" name="check_box_35">
+                        <label for="check_box_35">Заказать подарки/бонбоньерки для гостей</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_36" name="check_box_36">
+                        <label for="check_box_36">Подготовить подарки гостям для проведения конкурсов</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_37" name="check_box_37">
+                        <label for="check_box_37">Выяснить необходимость расселения гостей, забронировать отель</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_38" name="check_box_38">
+                        <label for="check_box_38">Составить список гостей, нуждающихся в трансфере</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_39" name="check_box_39">
+                        <label for="check_box_39">Подобрать трансфер</label><br>
+                    </div>
+                    <div class="checkbox__item">
+                        <input type="checkbox" id="check_box_40" name="check_box_40">
+                        <label for="check_box_40">Отправить всем подрядчикам тайминг, списки гостей, список и контакты всех ответственных организаторов</label><br>
+                    </div>
+                    <a class="checkbox-print" href="javascript:(print());" title="Распечатать">Версия для печати</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="progressbar-container">
+        <div class="progressbar-bar"></div>
+        <div class="ui-progressbar-value"></div>
+        <div class="progressbar-label"></div>
+    </div>
+    <footer class="footer">
+        <div class="logo-small"><img src="images/icon.png" alt="Small logo"></div>
+        <p class="copyright">&copy; Ulyana Mihalchenko</p>
+        <div class="to-top icon-circle-up"><a href="#top" title="К началу страницы"></a></div>
+    </footer>
+</body>
