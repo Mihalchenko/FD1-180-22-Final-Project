@@ -1,0 +1,43 @@
+@page {
+    size: A4;
+    margin: 1cm;
+}
+* {
+    background-color: white !important;
+    background-image: none !important;
+    color: black !important;
+}
+.footer, .header {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.logo {
+    width: auto;
+}
+.add__page__header, .header {
+    position: absolute;
+}
+.checkbox {
+    font-size: 20px;
+}
+.checkbox-bg {
+    padding-top: 91px;
+}
+.print-next-page {
+    padding-top: 16px;
+}
+p.copyright {
+    margin-top: 50px;
+    color: black;
+    width: 100%;
+    font-weight: bold;
+    font-size: 28px;
+    font-style: italic;
+}
+.add__page__header h1 {
+    margin-bottom: 0;
+}
+.progressbar-container, .checkbox__header, .logo-small, .checkbox-print, .to-top, .add__page__header p, .nav, .icon-phone, .icon-instagram, .icon-vk, .icon-facebook {
+    display: none;
+}
