@@ -8,11 +8,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/jquery-ui.css">
     <link rel="icon" href="images/icon.png" type="image/png">
     <title>UM - Услуги</title>
 </head>
 <body>
     <script src="js/script.js"></script>
+    <script src="js/jquery-min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+        $(function(){
+            $("#datepicker").datepicker();
+        });
+    </script>
     <header class="header">
         <div class="logo">
             <a href="index.html" title="Обновить страницу"><img src="images/header-logo.png" alt="logo"></a>
@@ -102,7 +110,7 @@
             <input type="text" id="name" name="name" placeholder="Ваше имя*" required class="modal-input">
             <input type="text" id="phone" name="phone" placeholder="Ваш телефон*" required class="modal-input">
             <input type="email" id="mail" name="mail" placeholder="Ваш email*" required class="modal-input">
-            <input type="date" id="date" name="date" class="modal-input">
+            <input type="text" id="datepicker" name="date" placeholder="Выберите дату" class="modal-input">
             <button type="submit" class="contacts__submit" onclick="sendContacts()">Отправить</button>
         </form>
     </div>
