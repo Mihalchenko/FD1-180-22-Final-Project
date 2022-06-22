@@ -620,6 +620,7 @@ input:focus {
     left: 50%;
     z-index: 102;
     transform: translate(-50%, -50%);
+    font-size: 0.85em;
 }
 .modal_open {
     display: block;
