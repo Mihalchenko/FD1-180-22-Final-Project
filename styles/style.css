@@ -684,6 +684,7 @@ input:focus {
     height: 50px;
     text-transform: uppercase;
     margin: auto;
+    margin-top: 10px;
     color: white;
     background-color: rgba(34,34,34,0.9);
     border: 0;
